@@ -1,0 +1,315 @@
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* Header with Logo and Navigation */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+.logo h1 {
+    font-family: 'Merriweather', serif;
+    color: #333;
+    font-size: 1.8em;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav ul li {
+    position: relative;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s;
+}
+header nav ul li a:hover::after {
+    width: 100%;
+}
+header nav ul li a:hover {
+    color: #007bff;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+    display: flex;
+    gap: 20px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #007bff;
+}
+
+.hero {
+    height: 100vh;
+background-image: url('./images/hero.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 3em;
+    margin: 0;
+}
+.hero h2 span {
+    font-family: 'Roboto', sans-serif;
+    color: #ffcc00;
+}
+.ripple-button {
+    padding: 10px 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ripple-button:hover {
+    background: #0056b3;
+}
+.ripple-button:active::after {
+    content: '';
+    width: 300%;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: ripple 0.6s ease-out;
+}
+@keyframes ripple {
+    from { width: 0; height: 0; opacity: 1; }
+    to { width: 300%; height: 300%; opacity: 0; }
+} 
+
+/* Blog Cards */
+.blog-section {
+    padding: 50px 10%;
+    background: #fff;
+}
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.card h3 {
+    font-family: 'Merriweather', serif;
+    padding: 15px;
+}
+.card p {
+    padding: 0 15px 15px;
+    color: #555;
+}
+.card a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0 15px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.card a:hover {
+    background: #0056b3;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Gallery */
+.gallery {
+    padding: 50px 10%;
+    background: #f9f9f9;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    transition: transform 0.3s;
+}
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  margin: 0 10px;
+}
+
+footer .social-icons img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+footer .social-icons img:hover {
+  filter: grayscale(0%);
+  animation: bounce 0.6s ease forwards;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Back to Top Button */
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: background 0.3s;
+}
+.to-top:hover {
+    background: #0056b3;
+}
+
+/* Glow Effect for Subscribe Button */
+.glow-button {
+    background: #ff0040;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040, 0 0 30px #ff0040;
+    transition: box-shadow 0.3s;
+}
+.glow-button:hover {
+    box-shadow: 0 0 20px #ff0040, 0 0 30px #ff0040, 0 0 40px #ff0040;
+}
